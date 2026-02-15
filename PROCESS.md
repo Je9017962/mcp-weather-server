@@ -12,5 +12,5 @@ The biggest issue I ran into was Claude Code repeatedly showing “No running MC
 Claude only loads .mcp.json from the workspace root.  
 I had opened VS Code from a parent folder, so Claude never saw the configuration file. Reopening VS Code directly from the project folder fixed this. The server must print something on startup. Claude Code expects output on stdout to confirm the server is alive. My server was silent on launch, so Claude treated it as non‑responsive. Adding a simple startup log (e.g., console.log("MCP Weather Server running")) solved the issue. Once both problems were fixed, Claude immediately detected the server and the get_weather tool appeared in the Tools panel.
 
-## What I Learned: How MCP Servers Actually Work
+## 4. What I Learned: How MCP Servers Actually Work
 Building this server gave me a much clearer understanding of how MCP functions behind the scenes. MCP servers communicate with Claude Code using JSON‑RPC over stdin/stdout, which means the server doesn’t run as a web service—it behaves more like a local process that Claude launches and talks to directly. I also learned how important structured responses are: Claude relies on consistent JSON formats to display tool results cleanly.
