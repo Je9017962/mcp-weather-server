@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "my-first-mcp": {
+      "command": "node",
+      "args": [
+        "C:/Users/Jerem/mcp-weather-server/index.js"
+      ],
+      "type": "stdio"
+    }
+  }
+}
